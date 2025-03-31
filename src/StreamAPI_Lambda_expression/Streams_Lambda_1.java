@@ -2,7 +2,9 @@ package StreamAPI_Lambda_expression;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -109,13 +111,20 @@ public class Streams_Lambda_1 {
 		
 		List<String> ls = al.stream().filter(s->s.startsWith("A")).map(s->s.toLowerCase()).collect(Collectors.toList());
 		System.out.println(ls.get(0));
-		
-		// Que -> print unique number from this arrayList
+				
 		// sort the array - 3rd index 
-		
 		List<Integer> value = Arrays.asList(3,2,2,7,5,1,9,7);
 		List<Integer> lsi = value.stream().distinct().sorted().collect(Collectors.toList());
 		System.out.println(lsi.get(2));
+		
+		// Que -> print unique number from this arrayList
+		//value.stream().distinct().sorted().forEach(s->System.out.print(s+" "));
+		
+		// Repeating elements
+		Set<Integer> unique = new HashSet<Integer>();
+		Set<Integer> missing = value.stream().filter(s->!unique.add(s)).collect(Collectors.toSet());
+		System.out.println(missing);
+		
 	}
 	
 	public static void main(String[] args) {

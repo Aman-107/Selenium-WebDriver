@@ -1,4 +1,4 @@
-package Relative_Locators;
+ package Relative_Locators;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -44,6 +44,8 @@ public class Friendly_Locators {
  * Below() : Element located below with respect to the specified element
  * toLeftOf() : Element located to the left of specified element.
  * toRightOf() : Element located to the right of the specified element.
+ * 
+ * Here relative locator has to present other than the webelement locator i.e they can't be present in the tagname.
  
  Syntax : 
  	driver.findElement(withTagName("XX").above(WebElement));
